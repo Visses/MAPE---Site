@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Stint+Ultra+Condensed&display=swap');
+
+/* mobile-first; todas medidas de layout em % onde faz sentido */
+html, body, #app { height: 100%; margin:0; padding:0; font-size:100%; color:#e0dfdf; font-family: 'Stint Ultra Condensed', sans-serif; overflow: hidden; /* impede rolagem vertical */}
+
+.header {
+  position: relative;           /* importante: canvas do finisher fica z-index:-1 */
+  width: 100%;
+  height: 50%;                  /* ajuste o % conforme precisar */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .header-content {
+  position: relative;
+  z-index: 1;                   /* coloca conteúdo acima do canvas */
+  width: 90%;
+  text-align: center;
+}
+
+.logo {
+  width: 80%;                   /* usa % para responsividade */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+
+}
+
+.tagline {
+  font-size: 150%;              /* porcentagem relativa ao font-size do body */
+  margin-top: 4%;
+  margin-bottom: 1%;
+  color: #e0dfdf;
+  letter-spacing: 0.5%;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 4%;
+  margin-top: 1%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10%;
+}
+
+.time span {
+  font-size: 100%;
+  font-weight: 700;
+  display: block;
+}
+
+.time small {
+  font-size: 55%;
+  margin-top: 2%;
+  letter-spacing: 0.2%;
+}
+
+.next-drop {
+    font-size: 100%;
+    animation: blink-color 1s infinite;
+}
+
+@keyframes blink-color {
+    0%, 100% {
+        color: rgb(0, 0, 0);
+    }
+    50% {
+        color: rgb(255, 255, 255);
+    }
+}
+
+/* responsividade: em telas maiores, diminuímos a altura do header (a ideia mobile-first) */
+@media (min-width: 800px) {
+  .header { height: 40%; }
+  .logo { width: 35%; margin-top: 2%;}
+  .tagline { font-size: 150%; }
+  .time span { font-size: 180%;}
+  .countdown { margin-bottom: 10%;}
+}
+
+.finisher-header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+    animation: zoomOut 2s ease forwards;
+    transform-origin: center center;
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0; /* sem espaço entre input e botão */
+  margin-top: 0px;
+  
+}
+
+.subscribe-form .cta {
+  width: 100%;
+  text-align: center;
+  font-size: 120%;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subscribe-form input[type="email"] {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid #000;
+  border-right: none; /* evita borda dupla com o botão */
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  flex: 1; /* cresce para ocupar espaço */
+  width: 30%;
+  font-family: 'Stint Ultra Condensed', sans-serif;
+  background-color: #e0dfdf;
+}
+
+.subscribe-form button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #e0dfdf;
+  color: #000000;
+  border: 2px solid #000;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: 'Stint Ultra Condensed', sans-serif;
+}
+
+.subscribe-form button:hover {
+  background-color: #333;
+  
+}
