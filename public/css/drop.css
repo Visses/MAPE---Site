@@ -25,7 +25,7 @@ html, body, #app { height: 100%; margin:0; padding:0; font-size:100%; color:#e0d
   height: auto;
   display: block;
   margin: 0 auto;
-
+  z-index: 1000;
 }
 
 .tagline {
@@ -156,4 +156,97 @@ body {
 .subscribe-form button:hover {
   background-color: #333;
   
+}
+
+
+
+
+
+.login-container {
+  text-align: center;
+  width: 90%;
+  max-width: 350px;
+  margin: 20px auto;
+}
+
+.login-container h2 {
+  font-size: 120%;
+  margin-bottom: 15px;
+  font-family: 'Stint Ultra Condensed', sans-serif;
+}
+
+.password-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.password-form input[type="password"] {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid #000;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  flex: 1;
+  background-color: #e0dfdf;
+  font-family: 'Stint Ultra Condensed', sans-serif;
+}
+
+.password-form button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #e0dfdf;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: 'Stint Ultra Condensed', sans-serif;
+}
+
+.password-form button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.error {
+  color: red;
+  font-size: 90%;
+  margin-top: 10px;
+  display: none;
+}
+
+
+
+
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: transparent; /* 🔑 garante transparência */
+}
+
+/* estrelas cadentes: acima do finisher mas abaixo do fosco */
+#shooting-stars { 
+  z-index: 1; 
+}
+
+/* overlay fosco por cima das estrelas */
+.bg-frost {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: rgba(10, 10, 10, 0.836);
+  pointer-events: none;
+}
+
+/* conteúdo sempre acima de tudo */
+.header-content { 
+  position: relative; 
+  z-index: 2000; 
 }

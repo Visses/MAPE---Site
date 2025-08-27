@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     new FinisherHeader({
   "count": 60,
   "size": { "min": 2, "max": 6, "pulse": 0 },
-  "speed": { "x": { "min": 0, "max": 0.2 }, "y": { "min": 0, "max": 0.5 } },
+  "speed": { "x": { "min": 0, "max": 0.05 }, "y": { "min": 0, "max": 0.05 } },
   "colors": {
     "background": "#000000ff",
     "particles": [

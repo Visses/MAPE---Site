@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Stint+Ultra+Condensed&display=swap');
+
+/* mobile-first; todas medidas de layout em % onde faz sentido */
+html, body, #app { height: 100%; margin:0; padding:0; font-size:100%; color:#e0dfdf; font-family: 'Stint Ultra Condensed', sans-serif; overflow: hidden; /* impede rolagem vertical */}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 100%; /* ocupar a tela toda */
+  display: flex;
+  align-items: flex-start;   /* topo */
+  justify-content: center;   /* centraliza horizontal */
+  padding-top: 5%;           /* ajusta a distância do topo */
+}
+
+
+
+.header-content {
+  position: relative;
+  z-index: 4;                   /* coloca conteúdo acima do canvas */
+  width: 90%;
+  text-align: center;
+}
+
+.logo {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+/* responsividade: em telas maiores, diminuímos a altura do header (a ideia mobile-first) */
+@media (min-width: 800px) {
+  .header { height: 40%; }
+  .logo { width: 35%; margin-top: 2%;}
+  
+}
+
+.finisher-header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+    animation: zoomOut 2s ease forwards;
+    transform-origin: center center;
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: transparent; /* 🔑 garante transparência */
+}
+
+/* estrelas cadentes: acima do finisher mas abaixo do fosco */
+#shooting-stars { 
+  z-index: 1; 
+}
+
+/* overlay fosco por cima das estrelas */
+.bg-frost {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: rgba(10, 10, 10, 0.836);
+  pointer-events: none;
+}
+

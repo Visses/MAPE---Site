@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MAPE — Login</title>
+  <link rel="stylesheet" href="/css/drop.css">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Stint+Ultra+Condensed&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X96VCK90R6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X96VCK90R6');
+</script>
+</head>
+<body>
+  <div id="app">
+    <header class="header finisher-header">
+      <div class="header-content">
+
+        <img src="/img/logomape.png" alt="MAPE" class="logo">
+
+        <!-- container de senha -->
+        <div class="login-container">
+          <h2 class="cta">Digite a senha</h2>
+          <form class="password-form" onsubmit="event.preventDefault(); validarSenha();">
+            <input type="password" id="senha" placeholder="Senha">
+            <button type="submit">Entrar</button>
+          </form>
+          <p class="error" id="erro">Senha incorreta!</p>
+        </div>
+
+        <h1 class="tagline">O X DO MAPA MAIS PERTO DO QUE NUNCA</h1>
+
+      </div>
+    </header>
+
+    <footer class="footer">
+      <!-- footer simples por enquanto -->
+    </footer>
+  </div>
+
+  <!-- inclui o finisher (arquivo que você baixou) -->
+  <script src="/js/finisher-header.es5.min.js"></script>
+
+    <!-- nosso script: inicializa o finisher e o cronômetro -->
+  <script src="/js/drop.js" type="text/javascript"></script>
+
+  <!-- script de validação da senha -->
+  <script>
+    function validarSenha() {
+      const senha = document.getElementById("senha").value;
+      const erro = document.getElementById("erro");
+
+      const senhaCorreta = "373474"; // <- muda aqui
+
+      if (senha === senhaCorreta) {
+        window.location.href = "mape.html"; // redireciona pro site
+      } else {
+        erro.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
